@@ -57,6 +57,7 @@ body{
     align-items: center;
     font-size: 3em;
     color: white;
+    cursor: pointer;
 }
 .temp-cont{
     display: flex;
