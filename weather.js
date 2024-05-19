@@ -40,6 +40,7 @@ checkWeather( 'dire dawa');
 button.addEventListener('click', () => {
 // Inputted city
 checkWeather(place.value);
+place.value='';
 });
 
   // Tab to edit
