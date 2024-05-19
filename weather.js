@@ -2,17 +2,12 @@
 const apiKey = "381e93d332768bc581874ba9193b2d03";
 const apiUrl =
 "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-const button = document
-  .querySelector('.search-btn');
-const place = document
-  .querySelector('.input');
-  
+const button = document.querySelector('.search-btn');
+const place = document.querySelector('.input');
 async function checkWeather(city){
-  
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     let data= await response.json();
     console.log(data)
-    
     let imageWr;
     if(data.weather[0].main == "Clouds"){
    imageWr  = `<img class="img" src="icon/cloudy.png"> <sub>cloudy</sub> `;
@@ -33,10 +28,8 @@ document.querySelector('.temp')
  document.querySelector('.wins').innerHTML = "speed" + `<br>`+data.wind.speed + "km/h";
  document.querySelector('.country').innerHTML = data.name;
 
- 
 let fahrnet = document.querySelector('.temp');
 fahrnet.addEventListener('click',()=>{
-  
     let change =(data.main.temp) * (9/5) + 32;
      fahrnet.innerHTML=Math.round(change) +"&#8457;";
 });
@@ -45,10 +38,8 @@ fahrnet.addEventListener('click',()=>{
 //default city value
 checkWeather( 'dire dawa');
 button.addEventListener('click', () => {
-
 // Inputted city
 checkWeather(place.value);
- 
 });
 
   // Tab to edit
