@@ -10,28 +10,29 @@ async function checkWeather(city){
     console.log(data)
     let imageWr;
     if(data.weather[0].main == "Clouds"){
-   imageWr  = `<img class="img" src="icon/cloudy.png"> <sub>cloudy</sub> `;
+   imageWr  = `<div class="temp-image"><img class="img" src="icon/cloudy.png"> <sup>cloudy</sup></div>`;
  } else if (data.weather[0].main == "Rain") {
-   imageWr = `<img class="img" src="icon/rainy.png"><sub>rainy</sub>`;
+   imageWr = `<div class="temp-image"><img class="img" src="icon/rainy.png"><sup>rainy</sup></div>`;
  }else if (data.weather[0].main == "Drizzle") {
-   imageWr = `<img class="img" src="icon/drizzle.png"><sub>drizzle</sub>`;
+   imageWr =`<div class="temp-image"><img class="img" src="icon/drizzle.png"><sup>drizzle</sup></div>`;
  }else if (data.weather[0].main == "Clear") {
-   imageWr = `<img class="img" src="icon/sunny.png"><sub>clear</sub>`;
+   imageWr =`<div class="temp-image"><img class="img" src="icon/sunny.png"><sup>clear</sup></div>`;
  }else if (data.weather[0].main == "Mist") {
-   imageWr = `<img class="img" src="icon/mist.png"><sub>mist</sub>`;
+   imageWr = `<div class="temp-image"> <img class="img" src="icon/mist.png"><sup>mist</sup> </div>`;
  }
-   document.querySelector('.temp-image')
+   document.querySelector('.temp-imag')
     .innerHTML = imageWr;
-document.querySelector('.temp')
-.innerHTML = Math.round(data.main.temp) + "&deg;C";
+   let tmp = Math.round(data.main.temp) ;
+document.querySelector('.temp1')
+.innerHTML = tmp + `<sup id="sup">&deg;C</sup>`;
  document.querySelector('.humidity').innerHTML = "humudity" +`<br>`+ data.main.humidity + "%";
  document.querySelector('.wins').innerHTML = "speed" + `<br>`+data.wind.speed + "km/h";
  document.querySelector('.country').innerHTML = data.name;
 
-let fahrnet = document.querySelector('.temp');
+let fahrnet = document.querySelector('.temp1');
 fahrnet.addEventListener('click',()=>{
     let change =(data.main.temp) * (9/5) + 32;
-     fahrnet.innerHTML=Math.round(change) +"&#8457;";
+     fahrnet.innerHTML=Math.round(change) + `<sup id="sup">&#8457;</sup>`;
 });
 
 }

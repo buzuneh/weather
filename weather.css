@@ -49,16 +49,21 @@ body{
     margin-right: 20px;
     justify-content: space-between;
 }
-.temp{
+ .temp{
     display: flex;
     width: fit-content;
     justify-content: center;
-    font-weight: bolder;
     align-items: center;
-    font-size: 3em;
+    
     color: white;
     cursor: pointer;
 }
+.temp1{
+    font-size: 5em;
+    color: white;
+    cursor: pointer;
+} 
+
 .temp-cont{
     display: flex;
     justify-content: center;
@@ -91,9 +96,9 @@ body{
     display: flex;
     width: 20px;
     align-items: center;
-    font-size: 26px;
-    color: white;
-    font-weight: bold;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.89);
+    font-weight:200;
     width: fit-content;
 }
 .hum,.win{
@@ -106,6 +111,10 @@ body{
     align-items: center;
     color: white;
 }
-sub{
-    color: white;
+sup{
+    color:white;
+}
+#sup{
+    font-size:0.6em;
+
 }
